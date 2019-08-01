@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const store = Vuex.store({
    modules: {
-       
+        home
    }
 })
 
