@@ -1,4 +1,26 @@
 module.exports = (api, options) => {
+    const fs = require('fs')
+
+    // 通过preset的形式配置opts.router，这里则不需要
+    const routerPath = api.resolve('./src/router.js')
+    options.router = options.router || fs.existsSync(routerPath)
+
+    const filesToDelete = [
+        'src/assets/logo.png',
+        'src/views/About.vue',
+        'src/views/Home.vue',
+    ]
+    console.log('\n[custom-tpl plugin tips]\n \t GeneratorAPI options:', options)
+
+    api.render(files => {
+        Object.keys(files)
+          .filter(name => filesToDelete.indexOf(name) > -1)
+          .forEach(name => delete files[name])
+    })
+
+     // 公共基础目录和文件
+    api.render('./template/default');
+
     // 安装一些基础公共库
     api.extendPackage({
       dependencies: {
@@ -31,8 +53,7 @@ module.exports = (api, options) => {
       });
     }
   
-    // 公共基础目录和文件
-    api.render('./template/default');
+   
   
     // 配置文件
     api.render({
