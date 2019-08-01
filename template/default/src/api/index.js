@@ -1,5 +1,4 @@
 import axios from 'axios'
-import apiUrl from './apiUrl'
 axios.defaults.timeout = 5000
 axios.defaults.baseURL = ''
 axios.defaults.withCredentials = true // 设置session不变化
