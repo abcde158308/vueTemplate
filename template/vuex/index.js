@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-const store = Vuex.store({
+Vue.use(Vuex)
+const state = {
 
+}
+const store = Vuex.store({
+   state
 })
 
 export default store
