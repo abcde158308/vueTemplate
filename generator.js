@@ -14,51 +14,52 @@ module.exports = (api, options) => {
 
     api.render(files => {
         Object.keys(files)
-          .filter(name => filesToDelete.indexOf(name) > -1)
-          .forEach(name => delete files[name])
+            .filter(name => filesToDelete.indexOf(name) > -1)
+            .forEach(name => delete files[name])
     })
 
-     // 公共基础目录和文件
+    // 公共基础目录和文件
     api.render('./template/default');
 
     // 安装一些基础公共库
     api.extendPackage({
-      dependencies: {
-        "axios": "^0.18.0",
-        "lodash": "^4.17.10",
-        "keymirror": "^0.1.1"
-      },
-      devDependencies: {
-        "mockjs": "^1.0.1-beta3"
-      }
+        dependencies: {
+            "axios": "^0.18.0",
+            "lodash": "^4.17.10",
+            "keymirror": "^0.1.1"
+        },
+        devDependencies: {
+            "mockjs": "^1.0.1-beta3"
+        }
     });
-  
+
     // 安装 vuex
     if (options.vuex) {
-      api.extendPackage({
-        dependencies: {
-          vuex: '^3.0.1'
-        }
-      });
-  
-      api.render('./template/vuex');
+        api.extendPackage({
+            dependencies: {
+                vuex: '^3.0.1'
+            }
+        });
+
+        api.render('./template/vuex');
     }
-  
+
     // 安装 element-ui 库
     if (options.elementUI) {
-      api.extendPackage({
-        devDependencies: {
-          "element-ui": "^2.4.6"
-        }
-      });
+        api.extendPackage({
+            devDependencies: {
+                "element-ui": "^2.4.6"
+            }
+        });
     }
-  
-   
-  
+
+
+
     // 配置文件
     api.render({
-      './.eslintrc.js'     : './template/_eslintrc.js',
-      './.gitignore'       : './template/_gitignore',
-      './.postcssrc.js'    : './template/_postcssrc.js'
+        './.eslintrc.js': './template/_eslintrc.js',
+        './.gitignore': './template/_gitignore',
+        './.postcssrc.js': './template/_postcssrc.js',
+        './a.yaml': './template/a.yaml'
     });
-  }
+}
