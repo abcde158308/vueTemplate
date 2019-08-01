@@ -79,26 +79,25 @@
         },
 
         "eslintConfig": {
-            "indent": "off",
-            "vue/script-indent": [
-                "error",
-                4
-            ],
-            "linebreak-style": [
-                "error",
-                "windows"
-            ],
-            "quotes": [
-                "error",
-                "single"
-            ],
-            "no-var": 0
+            "rules": {
+                "indent": "off",
+                "vue/script-indent": [
+                    "error",
+                    4
+                ],
+                "linebreak-style": [
+                    "error",
+                    "windows"
+                ],
+                "quotes": [
+                    "error",
+                    "single"
+                ],
+                "no-var": 0
+            }
         }
     },
-
     "router": true,
-
     "vuex": false,
-
-    "routerHistoryMode": false
+    "routerHistoryMode": true
 }
