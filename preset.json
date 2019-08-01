@@ -12,7 +12,7 @@
         "@vue/cli-plugin-eslint": {
             "version": "^3.0.0",
 
-            "config": "recommended",
+            "config": "standard",
 
             "lintOn": ["save", "commit"]
         }
@@ -79,47 +79,20 @@
         },
 
         "eslintConfig": {
-            "env": {
-                "browser": true,
-                "es6": true
-            },
-            "parser": "vue-eslint-parser",
-            "parserOptions": {
-                "parser": "babel-eslint",
-                "ecmaVersion": 2018,
-                "sourceType": "module",
-                "allowImportExportEverywhere": true
-            },
-            "extends": ["standard", "plugin:vue/recommended"],
-            "globals": {
-                "Atomics": "readonly",
-                "SharedArrayBuffer": "readonly",
-                "Vue": true,
-                "axios": true,
-                "ELEMENT": true,
-                "Vuex": true,
-                "VueRouter": true,
-                "$cookies": true
-            },
-            "plugins": [
-                "vue"
+            "indent": "off",
+            "vue/script-indent": [
+                "error",
+                4
             ],
-            "rules": {
-                "indent": "off",
-                "vue/script-indent": [
-                    "error",
-                    4
-                ],
-                "linebreak-style": [
-                    "error",
-                    "windows"
-                ],
-                "quotes": [
-                    "error",
-                    "single"
-                ],
-                "no-var": 0
-            }
+            "linebreak-style": [
+                "error",
+                "windows"
+            ],
+            "quotes": [
+                "error",
+                "single"
+            ],
+            "no-var": 0
         }
     },
 
