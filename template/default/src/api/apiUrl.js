@@ -6,5 +6,5 @@ if (process.env.NODE_ENV === 'development') {
     root = '/api'
 }
 export default {
-    insurance: root + '/a/a', // 展示接口(GET)
+    insurance: root + '/a/a' // 展示接口(GET)
 }
